@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -377,8 +377,9 @@
 		5E8B52AF26FC744300FAEA6D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1250;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					5E8B52B626FC744300FAEA6D = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -592,6 +593,8 @@
 				DEVELOPMENT_TEAM = 6F844272PW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "swiftui_classic-tabview_show-hide/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = NSCameraUsageDescription;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -615,6 +618,8 @@
 				DEVELOPMENT_TEAM = 6F844272PW;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "swiftui_classic-tabview_show-hide/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = NSCameraUsageDescription;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
