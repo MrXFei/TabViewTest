@@ -595,7 +595,7 @@
 				INFOPLIST_FILE = "swiftui_classic-tabview_show-hide/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = NSCameraUsageDescription;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,7 +620,7 @@
 				INFOPLIST_FILE = "swiftui_classic-tabview_show-hide/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = NSCameraUsageDescription;
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

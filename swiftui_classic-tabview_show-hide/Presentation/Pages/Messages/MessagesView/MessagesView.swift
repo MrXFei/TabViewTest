@@ -4,7 +4,7 @@ struct MessagesView: View {
     let props: Props
 
     var body: some View {
-        NavigationLink(destination: CameraView(), label: {Text("camera")})
+        NavigationLink(destination: UserSettingView(), label: {Text("camera")})
         List {
             Section(header: owner) {
                 ForEach((1...props.fakeMsgsCount), id: \.self) {
@@ -28,6 +28,79 @@ struct MessagesView: View {
                 Text("timestamp: \(Date().timeIntervalSince1970)")
             }
         }
+    }
+}
+
+struct UserSettingView: View {
+    var body: some View {
+        List {
+            Section{
+                NavigationLink(destination: AvatarEditView() ) {
+                    HStack {//AvatarEditView()
+                        Text("Profile")
+                            .padding()
+                        Spacer()
+                    }
+                }
+            }
+        }
+        .listStyle(GroupedListStyle())
+        .background(Color(.systemGroupedBackground))
+        .navigationBarTitle("Personal Information", displayMode: .inline)
+    }
+}
+
+struct AvatarEditView: View {
+    @State private var isPresentingActionSheet = false
+    
+    @State private var selectedImage: UIImage? = nil // Store the selected image
+    @State private var isCameraViewPresented: Bool = false
+    @State private var avatarImage: [UIImage] = []
+    
+    var body: some View {
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+                if avatarImage.isEmpty  == false {
+                    let img = avatarImage[0]
+                    Image(uiImage: img)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: geometry.size.width, height: geometry.size.width)
+                    
+                } else {
+                    Image(systemName: "person.circle")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: geometry.size.width, height: geometry.size.width)
+                }
+                Spacer()
+            }
+        }
+        .navigationBarTitle("Set Profile", displayMode: .inline)
+        .navigationBarItems(trailing: Button(action: {
+            isPresentingActionSheet = true
+        }) {
+            Image(systemName: "ellipsis")
+        })
+        .confirmationDialog("", isPresented: $isPresentingActionSheet) {
+                Button("Take Photo") {
+                    isCameraViewPresented = true
+                    print("-------")
+                }
+                .fullScreenCover(isPresented: $isCameraViewPresented) {
+                    ImagePicker(sourceType: .camera, selectedImage: $selectedImage)
+                        .ignoresSafeArea()
+                }
+                .onChange(of: selectedImage) { newValue in
+                    if let image = newValue {
+                        avatarImage[0] = image
+                    }
+                }
+                
+                Button("Cancel", role: .cancel){}
+            }
+        
     }
 }
 
